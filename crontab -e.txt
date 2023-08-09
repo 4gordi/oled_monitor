@@ -1,0 +1,1 @@
+@reboot /usr/bin/python3 /home/4gordi/loading.py && /usr/bin/python3 /home/4gordi/monitor.py &

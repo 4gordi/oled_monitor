@@ -1,0 +1,12 @@
+[Unit]
+Description=Service FUCKING shutting down this FUCKING oled screen after shutdown this FUCKING system
+DefaultDependencies=no
+Before=shutdown.target reboot.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /home/4gordi/oled_monitor/shutdown.py
+TimeoutStartSec=0
+
+[Install]
+WantedBy=shutdown.target reboot.target
