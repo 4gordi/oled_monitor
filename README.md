@@ -1,5 +1,4 @@
-# oled_monitor
-python-scripts for oled screen (128x64)
+# python-scripts for oled screen (128x64)
 
 sudo apt update && sudo apt upgrade
 
@@ -23,21 +22,20 @@ sudo python3 raspi-blinka.py
 
 sudo pip3 install adafruit-circuitpython-ssd1306
 
-#sudo apt-get install python3-pil
+git clone https://github.com/4gordi/oled_monitor.git
 
-git clone https://github.com/mklements/OLED_Stats.git
+cd oled_monitor
 
-cd OLED_Stats
-
-python3 stats.py
+python3 monitor.py
 
 crontab –e
 
-@reboot python3 /home/4gordi/stats.py &
+@reboot cd /home/pi/oled_monitor && python3 loading.py && python3 monitor.py &
 
-cd OLED_Stats
-cp PixelOperator.ttf ~/PixelOperator.ttf
-cp stats.py ~/stats.py
-cp fontawesome-webfont.ttf ~/fontawesome-webfont.ttf
+sudo nano /etc/systemd/system/shutdown.service
 
-@reboot cd /home/4gordi/OLED_Stats && python3 loading.py && python3 monitor.py &
+systemctl enable shutdown.service
+
+systemctl status shutdown.service
+
+
