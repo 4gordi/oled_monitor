@@ -30,6 +30,8 @@ python3 monitor.py
 
 crontab –e
 
+sudo nano /etc/motd
+
 @reboot cd /home/pi/oled_monitor && python3 loading.py && python3 monitor.py &
 
 sudo nano /etc/systemd/system/shutdown.service
