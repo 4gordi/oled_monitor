@@ -1,1 +1,1 @@
-@reboot cd /home/pi/OLED_Stats && /usr/bin/python3 loading.py && /usr/bin/python3 monitor.py &
+@reboot cd /home/pi/oled_monitor && /usr/bin/python3 loading.py && /usr/bin/python3 monitor.py &
