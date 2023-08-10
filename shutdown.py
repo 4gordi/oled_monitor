@@ -25,11 +25,11 @@ draw = ImageDraw.Draw(image)
 draw.rectangle((0,0,width,height), outline=0, fill=0)
 
 font = ImageFont.load_default()
-#font = ImageFont.truetype('PixelOperator.ttf', 20)
-#mini_font = ImageFont.truetype('PixelOperator.ttf', 16)
+font = ImageFont.truetype('editundo.ttf', 20)
+mini_font = ImageFont.truetype('editundo.ttf', 16)
 
 start_time = datetime.datetime.now()
-timeout = 5
+timeout = 6
 
 while True:
     time_left = timeout - (datetime.datetime.now() - start_time).total_seconds()
@@ -39,8 +39,8 @@ while True:
         oled.show()
         break
     draw.rectangle((0,0,width,height), outline=0, fill=0)
-    draw.text((25, 20), 'Power Off...', font=font, fill=255)
-    draw.text((25, 40), 'Time left: ' + str(int(time_left)), font=font, fill=255)
+    draw.text((25, 15), 'Power Off...', font=mini_font, fill=255)
+    draw.text((10, 35), 'Time left: ' + str(int(time_left)), font=font, fill=255)
     oled.image(image)
     oled.show()
     time.sleep(1)
