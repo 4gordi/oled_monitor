@@ -1,1 +1,1 @@
-@reboot /usr/bin/python3 /home/4gordi/loading.py && /usr/bin/python3 /home/4gordi/monitor.py &
+@reboot cd /home/pi/OLED_Stats && /usr/bin/python3 loading.py && /usr/bin/python3 monitor.py &
