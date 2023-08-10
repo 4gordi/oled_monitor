@@ -49,7 +49,7 @@ font = ImageFont.load_default()
 # Alternatively load a TTF font.  Make sure the .ttf font file is in the same directory as the >
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
 # Icons website: https://icons8.com/line-awesome
-font = ImageFont.truetype('PixelOperator.ttf', 16)
+font = ImageFont.truetype('pixeloperator.ttf', 16)
 icon_font= ImageFont.truetype('lineawesome-webfont.ttf', 18)
 
 while True:
