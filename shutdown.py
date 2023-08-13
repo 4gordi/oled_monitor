@@ -8,10 +8,17 @@ import datetime
 import os
 import busio
 import subprocess
+import sys
 
-output = subprocess.check_output(['pgrep', '-f', 'monitor.py'])
-pid = int(output.strip())
-subprocess.run(['kill', str(pid)])
+process = 'monitor.py'
+
+try:
+    output = subprocess.check_output(['pgrep', '-f', process])
+    pid = int(output.strip())
+    subprocess.run(['kill', str(pid)])
+except subprocess.CalledProcessError:
+    ans = process + ' is not found\n'
+    sys.stdout.write(ans)
 
 i2c = busio.I2C(board.SCL, board.SDA)
 oled = adafruit_ssd1306.SSD1306_I2C(128, 64, i2c, addr=0x3c)
