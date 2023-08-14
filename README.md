@@ -2,10 +2,10 @@
 
 
 ```shell
-    $ cd ~
-    $ git clone https://github.com/4gordi/oled_monitor.git
-    $ cd oled_monitor
-    $ chmod +x install.py
-    $ ./install.py
-    $ systemctl status shutdown.service
+    cd ~
+    git clone https://github.com/4gordi/oled_monitor.git
+    cd oled_monitor
+    chmod +x install.py
+    ./install.py
+    systemctl status shutdown.service
 ```
