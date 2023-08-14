@@ -12,5 +12,5 @@ if [ $(printf "$CRON" | tail -c 1 | wc -l) -eq 0 ]; then
 fi
 
 #Modify the crontab
-printf "$CRON$CRON_ADD\n" | crontab -u $(whoami) -
+printf "$CRON$CRON_ADD\n" | crontab -u pi -
 
