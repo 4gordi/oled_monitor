@@ -16,7 +16,7 @@ shell.run_command("sudo pip3 install smbus -y")
 
 shell.run_command("sudo pip3 install adafruit-circuitpython-ssd1306 -y")
 
-shell.run_command("wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py")
+shell.run_command("wget https://raw.githubusercontent.com/4gordi/oled_monitor/main/raspi-blinka.py")
 
 shell.run_command("chmod +x raspi-blinka.py")
 
