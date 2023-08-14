@@ -8,15 +8,11 @@ shell.run_command("cd ~")
 
 shell.run_command("sudo apt update && sudo apt upgrade")
 
-shell.run_command("sudo apt install python3-pip")
-
 shell.run_command("sudo pip3 install --upgrade setuptools")
 
 shell.run_command("sudo apt-get install i2c-tools")
 
 shell.run_command("sudo pip install smbus")
-
-shell.run_command("sudo pip3 install --upgrade adafruit-python-shell")
 
 shell.run_command("wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py")
 
