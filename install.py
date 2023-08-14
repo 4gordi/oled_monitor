@@ -6,15 +6,15 @@ shell = Shell()
 
 shell.run_command("cd ~")
 
-shell.run_command("sudo apt update && sudo apt upgrade")
+shell.run_command("sudo apt update && sudo apt upgrade -y")
 
 shell.run_command("sudo pip3 install --upgrade setuptools")
 
-shell.run_command("sudo apt-get install i2c-tools")
+shell.run_command("sudo apt-get install i2c-tools -y")
 
-shell.run_command("sudo pip3 install smbus")
+shell.run_command("sudo pip3 install smbus -y")
 
-shell.run_command("sudo pip3 install adafruit-circuitpython-ssd1306")
+shell.run_command("sudo pip3 install adafruit-circuitpython-ssd1306 -y")
 
 shell.run_command("wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py")
 
@@ -30,4 +30,4 @@ shell.run_command("chmod +x crontab.sh")
 
 shell.run_command("./crontab.sh")
 
-shell.prompt_reboot()
+shell.run_command("sudo reboot")
