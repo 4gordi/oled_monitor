@@ -12,13 +12,13 @@ shell.run_command("sudo pip3 install --upgrade setuptools")
 
 shell.run_command("sudo apt-get install i2c-tools")
 
-shell.run_command("sudo pip install smbus")
+shell.run_command("sudo pip3 install smbus")
+
+shell.run_command("sudo pip3 install adafruit-circuitpython-ssd1306")
 
 shell.run_command("wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py")
 
-shell.run_command("sudo python3 raspi-blinka.py")
-
-shell.run_command("sudo pip3 install adafruit-circuitpython-ssd1306")
+shell.run_command("chmod +x raspi-blinka.py")
 
 shell.run_command("sudo cp motd /etc/motd")
 
