@@ -8,11 +8,9 @@ shell.run_command("cd ~")
 
 shell.run_command("sudo apt update && sudo apt upgrade -y")
 
-shell.run_command("sudo apt-get install i2c-tools -y")
+shell.run_command("sudo apt-get install -y python3-smbus i2c-tools")
 
 shell.run_command("sudo pip3 install --upgrade setuptools")
-
-shell.run_command("sudo pip3 install smbus")
 
 shell.run_command("sudo pip3 install adafruit-circuitpython-ssd1306")
 
