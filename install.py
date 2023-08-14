@@ -30,14 +30,8 @@ shell.run_command("sudo cp shutdown.service /etc/systemd/system/shutdown.service
 
 shell.run_command("systemctl enable shutdown.service")
 
-shell.run_command("cp crontab.sh /home/pi/crontab.sh")
-
-shell.run_command("cd ~")
-
 shell.run_command("chmod +x crontab.sh")
 
 shell.run_command("./crontab.sh")
-
-shell.run_command("sudo rm crontab.sh")
 
 shell.prompt_reboot()
