@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #The new cron job
-CRON_ADD='@reboot cd /home/$(whoami)/oled_monitor && python3 loading.py && python3 monitor.py &'
+CRON_ADD='@reboot cd /home/pi/oled_monitor && python3 loading.py && python3 monitor.py &'
 
 #Get crontab and remove lines containing "something" with sed
 #CRON=$(crontab -u $(whoami) -l | sed -n "/something/!p")
