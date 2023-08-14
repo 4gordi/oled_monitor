@@ -28,4 +28,6 @@ shell.run_command("chmod +x crontab.sh")
 
 shell.run_command("./crontab.sh")
 
+shell.run_command("sudo raspi-config nonint do_i2c 0")
+
 shell.run_command("sudo reboot")
