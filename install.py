@@ -6,8 +6,6 @@ shell = Shell()
 
 shell.run_command("cd ~")
 
-shell.run_command("sudo apt update && sudo apt upgrade -y")
-
 shell.run_command("sudo apt-get install -y python3-smbus i2c-tools")
 
 shell.run_command("sudo pip3 install --upgrade setuptools")
