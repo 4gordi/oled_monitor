@@ -3,6 +3,7 @@ import board
 import busio
 import digitalio
 import os
+import re
 
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_ssd1306
@@ -58,13 +59,19 @@ while True:
     draw.rectangle((0,0,width,height), outline=0, fill=0)
 
     # Shell scripts for system monitoring from here : https://unix.stackexchange.com/questions/>
-    cmd = "hostname -I | cut -d\' \' -f1 | head --bytes -1"
-    IP = subprocess.check_output(cmd, shell = True)
+    #cmd = "hostname -I | cut -d\' \' -f1 | head --bytes -1"
+    #IP = subprocess.check_output(cmd, shell = True)
+    command = 'hostname -I'
+
+    out = subprocess.getstatusoutput(command)
+    ips = out[1]
+
+    ips = re.compile(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})').findall(ips)
+    ips.append('pinas.local')
 
     #cmd = "df -h | awk '$NF==\"/\"{printf \"HDD: %d/%dGB %s\", $3,$2,$5}'"
     cmd = "df -h | awk '$NF==\"/\"{printf \"%d/%dGB\", $3,$2}'"
     MicroSD = subprocess.check_output(cmd, shell = True)
-
 
     cmd = "free -m | awk 'NR==2{printf \"%.2f%%\", $3*100/$2}'"
     MemUsage = subprocess.check_output(cmd, shell = True)
@@ -102,9 +109,17 @@ while True:
     # Text MicroSD usage
     draw.text((x+87, top+25), str(MicroSD,'utf-8'), font=font, fill=255)
     # Text IP address
-    draw.text((x+19, top+45), str(IP,'utf-8'),  font=font, fill=255)
+    #draw.text((x+19, top+45), str(IP,'utf-8'),  font=font, fill=255)
+    for IP in ips:
+        draw.rectangle((x+19,62,120,50), outline=0, fill=0)
+        oled.image(image)
+        oled.show()
 
+        draw.text((x+19, top+45), str(IP),  font=font, fill=255)
+        oled.image(image)
+        oled.show()
+        time.sleep(3)
+    
     # Display image.
     oled.image(image)
     oled.show()
-    time.sleep(LOOPTIME)
