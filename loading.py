@@ -19,7 +19,7 @@ draw.rectangle((0,0,width,height), outline=0, fill=0)
 font = ImageFont.truetype('editundo.ttf', 30)
 
 start_time = time.time()
-timeout = 5
+timeout = 9
 
 while time.time() < start_time + timeout:
     draw.rectangle((0,0,width,height), outline=0, fill=0)
