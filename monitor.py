@@ -3,7 +3,6 @@ import board
 import busio
 import digitalio
 import os
-import re
 
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_ssd1306
@@ -61,13 +60,9 @@ while True:
     # Shell scripts for system monitoring from here : https://unix.stackexchange.com/questions/>
     #cmd = "hostname -I | cut -d\' \' -f1 | head --bytes -1"
     #IP = subprocess.check_output(cmd, shell = True)
-    command = 'hostname -I'
 
-    out = subprocess.getstatusoutput(command)
-    ips = out[1]
-
-    ips = re.compile(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})').findall(ips)
-    ips.append('pinas.local')
+    IPs = (subprocess.getstatusoutput("hostname -I")[1]).split()
+    IPs.append(subprocess.getstatusoutput("hostname -A")[1])
 
     #cmd = "df -h | awk '$NF==\"/\"{printf \"HDD: %d/%dGB %s\", $3,$2,$5}'"
     cmd = "df -h | awk '$NF==\"/\"{printf \"%d/%dGB\", $3,$2}'"
