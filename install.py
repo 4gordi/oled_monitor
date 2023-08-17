@@ -16,6 +16,8 @@ shell.run_command("cd oled_monitor/")
 
 shell.run_command("chmod +x raspi-blinka.py")
 
+shell.run_command("./raspi-blinka.py")
+
 shell.run_command("sudo cp motd /etc/motd")
 
 shell.run_command("sudo cp shutdown.service /etc/systemd/system/shutdown.service")
