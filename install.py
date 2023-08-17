@@ -12,7 +12,7 @@ shell.run_command("sudo pip3 install --upgrade setuptools")
 
 shell.run_command("sudo pip3 install adafruit-circuitpython-ssd1306")
 
-shell.run_command("wget https://raw.githubusercontent.com/4gordi/oled_monitor/main/raspi-blinka.py")
+shell.run_command("cd oled_monitor/")
 
 shell.run_command("chmod +x raspi-blinka.py")
 
