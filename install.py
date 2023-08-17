@@ -14,9 +14,7 @@ shell.run_command("sudo pip3 install adafruit-circuitpython-ssd1306")
 
 shell.run_command("cd oled_monitor/")
 
-shell.run_command("chmod +x raspi-blinka.py")
-
-shell.run_command("python3 raspi-blinka.py")
+shell.run_command("sudo python3 raspi-blinka.py")
 
 shell.run_command("sudo cp motd /etc/motd")
 
