@@ -6,7 +6,7 @@
     sudo pip3 install adafruit_python_shell
     cd ~
     git clone https://github.com/4gordi/oled_monitor.git
-    cd oled_monitor
+    cd oled_monitor/
     chmod +x install.py
     ./install.py
     systemctl status shutdown.service
