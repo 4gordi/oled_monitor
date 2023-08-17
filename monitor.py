@@ -105,12 +105,12 @@ while True:
     draw.text((x+87, top+25), str(MicroSD,'utf-8'), font=font, fill=255)
     # Text IP address
     #draw.text((x+19, top+45), str(IP,'utf-8'),  font=font, fill=255)
-    for IP in ips:
+    for ip in IPs:
         draw.rectangle((x+19,62,120,50), outline=0, fill=0)
         oled.image(image)
         oled.show()
 
-        draw.text((x+19, top+45), str(IP),  font=font, fill=255)
+        draw.text((x+19, top+45), str(ip),  font=font, fill=255)
         oled.image(image)
         oled.show()
         time.sleep(3)
