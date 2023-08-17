@@ -22,7 +22,7 @@ shell.run_command("sudo cp motd /etc/motd")
 
 shell.run_command("sudo cp shutdown.service /etc/systemd/system/shutdown.service")
 
-shell.run_command("systemctl enable shutdown.service")
+shell.run_command("sudo systemctl enable shutdown.service")
 
 shell.run_command("chmod +x crontab.sh")
 
