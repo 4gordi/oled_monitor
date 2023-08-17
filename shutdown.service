@@ -5,7 +5,7 @@ Before=shutdown.target reboot.target
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c 'cd /home/pi/oled_monitor/ && /usr/bin/python3 shutdown.py'
+ExecStart=/bin/bash -c 'cd /home/$(whoami)/oled_monitor/ && /usr/bin/python3 shutdown.py'
 TimeoutStartSec=0
 
 [Install]
