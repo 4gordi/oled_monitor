@@ -16,8 +16,6 @@ shell.run_command("sudo pip3 install --upgrade setuptools")
 
 shell.run_command("sudo pip3 install adafruit-circuitpython-ssd1306")
 
-shell.run_command("cd oled_monitor/")
-
 shell.run_command("sudo cp motd /etc/motd")
 
 shell.run_command("sudo cp shutdown.service /etc/systemd/system/shutdown.service")
