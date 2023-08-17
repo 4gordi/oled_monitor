@@ -6,15 +6,17 @@ shell = Shell()
 
 shell.run_command("cd ~")
 
-shell.run_command("sudo apt-get install -y python3-smbus i2c-tools")
+shell.run_command("sudo apt-get install -y python3-smbus i2c-tools libgpiod-dev")
+
+shell.run_command("sudo pip3 install --upgrade RPi.GPIO")
+
+shell.run_command("sudo pip3 install --upgrade adafruit-blinka")
 
 shell.run_command("sudo pip3 install --upgrade setuptools")
 
 shell.run_command("sudo pip3 install adafruit-circuitpython-ssd1306")
 
 shell.run_command("cd oled_monitor/")
-
-shell.run_command("sudo python3 raspi-blinka.py")
 
 shell.run_command("sudo cp motd /etc/motd")
 
