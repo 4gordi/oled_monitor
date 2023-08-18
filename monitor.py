@@ -71,7 +71,7 @@ while True:
     cmd = "free -m | awk 'NR==2{printf \"%.2f%%\", $3*100/$2}'"
     MemUsage = subprocess.check_output(cmd, shell = True)
 
-    if os.path.exists('/dev/sda1'):
+    if os.path.exists('/dev/sda'):
         cmd = "df -h | awk '$NF==\"/storage\"{printf \"%d/%d\", $3,$2}'"
         Disk1 = subprocess.check_output(cmd, shell = True)
         draw.text((x, top+25), chr(61600), font=icon_font, fill=255)
