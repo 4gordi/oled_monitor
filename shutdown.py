@@ -36,7 +36,7 @@ font = ImageFont.truetype('editundo.ttf', 20)
 mini_font = ImageFont.truetype('editundo.ttf', 16)
 
 start_time = datetime.datetime.now()
-timeout = 6
+timeout = 4
 
 while True:
     time_left = timeout - (datetime.datetime.now() - start_time).total_seconds()
