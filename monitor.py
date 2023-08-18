@@ -72,7 +72,7 @@ while True:
     MemUsage = subprocess.check_output(cmd, shell = True)
 
     if os.path.exists('/dev/sda'):
-        cmd = "df -h | awk '$NF==\"/storage\"{printf \"%d/%d\", $3,$2}'"
+        cmd = "df -h | awk '$NF==\"/media/sda1\"{printf \"%d/%d\", $3,$2}'"
         Disk1 = subprocess.check_output(cmd, shell = True)
         draw.text((x, top+25), chr(61600), font=icon_font, fill=255)
     else:
